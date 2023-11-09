@@ -16,8 +16,13 @@ class Post extends AbstractMigration
     {
         $table = $this->table('posts'); //nome da tabela
 
-        $table->addColumn('title', 'string', [
+        $table->addColumn('title', 'string', options:[
             "limit" => 100,  
+            'null' => false, //não aceita nulo
+        ]);
+
+        $table->addColumn('slug', 'string', options:[
+            "limit" => 150,  
             'null' => false, //não aceita nulo
         ]);
 
