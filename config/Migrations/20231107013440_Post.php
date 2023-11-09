@@ -14,6 +14,21 @@ class Post extends AbstractMigration
      */
     public function change(): void
     {
-        
+        $table = $this->table('posts'); //nome da tabela
+
+        $table->addColumn('title', 'string', [
+            "limit" => 100,  
+            'null' => false, //não aceita nulo
+        ]);
+
+        $table->addColumn('created_at', 'timestamp', options:[
+            'default'=> 'CURRENT_TIMESTAMP',
+        ]);
+
+        $table->addColumn('updated_at', 'timestamp', options:[
+            'default'=> 'CURRENT_TIMESTAMP',
+            'update'=> 'CURRENT_TIMESTAMP',
+        ]);
+
     }
 }
