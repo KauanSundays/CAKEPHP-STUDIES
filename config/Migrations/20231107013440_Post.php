@@ -22,6 +22,11 @@ class Post extends AbstractMigration
         ]);
 
         $table->addColumn('slug', 'string', options:[
+            'null' => false, //não aceita nulo
+
+        ]);
+
+        $table->addColumn('user_id', 'integer', options:[
             "limit" => 150,  
             'null' => false, //não aceita nulo
         ]);
@@ -34,6 +39,10 @@ class Post extends AbstractMigration
             'default'=> 'CURRENT_TIMESTAMP',
             'update'=> 'CURRENT_TIMESTAMP',
         ]);
+
+        $table->addForeignKey('user_id', 'users', 'id');
+
+        $table->create();
 
     }
 }
