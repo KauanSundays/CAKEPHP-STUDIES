@@ -29,7 +29,6 @@ class Post extends AbstractMigration
         $table->addColumn('user_id', 'integer', options:[
             "limit" => 150,  
             'null' => false, //não aceita nulo
-            'delete' => 'CASCADE', //Caso um usuario for deletado, seus posts serão auto.
         ]);
 
         $table->addColumn('created_at', 'timestamp', options:[
@@ -41,7 +40,9 @@ class Post extends AbstractMigration
             'update'=> 'CURRENT_TIMESTAMP',
         ]);
 
-        $table->addForeignKey('user_id', 'users', 'id');
+        $table->addForeignKey('user_id', 'users', 'id', options:[
+            'delete' => 'CASCADE', //Caso um usuario for deletado, seus posts serão auto.
+        ]);
         $table->create();
     }
 }
