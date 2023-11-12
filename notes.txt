@@ -1,0 +1,3 @@
+nomeando ou apelidando rotas: 
+$builder->connect('/teste', ['controller' => 'Home', 'action' => 'index'],
+        options: ['_name' => 'home.index']) //em especial
