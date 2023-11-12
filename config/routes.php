@@ -9,5 +9,6 @@ return function (RouteBuilder $routes): void {
         //controller => NOME_DO__CONTROLLER, ACTION => NOME_DO_METODO
     });
 
-    $routes->connect('/about', ['controller' => 'About', 'action' => 'index']);
+    $routes->connect('/about', ['controller' => 'About', 'action' => 'index'],
+    options: ['_name' => 'about.index']);
 };
