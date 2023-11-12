@@ -12,4 +12,10 @@ return function (RouteBuilder $routes): void {
     $routes->get('/about', 
         ['controller' => 'About', 'action' => 'index'], 
         'about.index');
+
+    $routes->connect('/product{id}/name/{name}', 
+        ['controller'=>'Product', 'action' =>'show'], 
+        $options: ['_name' => 'product.show', 'pass' => ['id', 'name'], 'id' => '[0-9]+',
+        'name' => '[a-z]{3}'
+        ])->setMethods(['get']);
 };
