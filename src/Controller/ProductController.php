@@ -9,10 +9,13 @@ namespace App\Controller;
  */
 class ProductController extends AppController
 {
-    public function show($arg1, $arg2)
+    public function show($id, $name)
     {
-        var_dump('product show' . $arg1 . '' . $arg2);
+        var_dump('product show' . $id . '' . $name);
 
-        die();
+        // Se você está usando `dd`, certifique-se de que ele está disponível.
+        // Caso contrário, substitua por `var_dump` ou `print_r`.
+        dd($id, $name);
     }
 }
+
