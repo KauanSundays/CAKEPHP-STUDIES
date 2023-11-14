@@ -18,4 +18,8 @@ return function (RouteBuilder $routes): void {
         ['_name' => 'product.show', 'pass' => ['id', 'name'], 'id' => '[0-9]+',
         'name' => '[a-z]+'
         ])->setMethods(['get']);
+
+    $routes->connect('/home',
+        ['controller'=>'Home', 'action' => 'show'],
+        )->setMethods(['get']);
 };
