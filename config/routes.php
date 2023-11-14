@@ -20,6 +20,6 @@ return function (RouteBuilder $routes): void {
         ])->setMethods(['get']);
 
     $routes->connect('/home',
-        ['controller'=>'Home', 'action' => 'show'],
+        ['controller'=>'Home', 'action' => 'index'],
         )->setMethods(['get']);
 };
