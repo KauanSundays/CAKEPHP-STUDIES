@@ -14,6 +14,6 @@ class HomeController extends AppController
 {
     public function index()
     {
-        $connection = ConnectionManager::get('crud');
+        $connection = ConnectionManager::get('default');
     }
 }
