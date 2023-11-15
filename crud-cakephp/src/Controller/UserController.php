@@ -7,6 +7,6 @@ class UserController extends AppController
 {
     public function index()
     {
-       
+       dd('ai papai');
     }
 }

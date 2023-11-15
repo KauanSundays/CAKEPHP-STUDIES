@@ -22,4 +22,8 @@ return function (RouteBuilder $routes): void {
     $routes->connect('/home',
         ['controller'=>'Home', 'action' => 'index'],
         )->setMethods(['get']);
+
+    $routes->connect('/users',
+        ['controller'=>'User', 'action' => 'index'],
+        )->setMethods(['get']);
 };
