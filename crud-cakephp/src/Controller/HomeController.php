@@ -18,6 +18,6 @@ class HomeController extends AppController
         $users = $connection->execute('select * from users')->fetchAll('obj');
 
         $this->set(compact('users'));
-        return $this->render('index', 'master');
+        return $this->render('index');
     }
 }
