@@ -15,5 +15,9 @@ class HomeController extends AppController
     public function index()
     {
         $connection = ConnectionManager::get('default');
+        $users = $connection->execute('select * from users')->fetchAll('obj');
+
+        $this->set(compact('name'));
+        return $this->render('index', 'master');
     }
 }
