@@ -1,4 +1,5 @@
 <?php
+
 use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
 
@@ -9,21 +10,7 @@ return function (RouteBuilder $routes): void {
     //     //controller => NOME_DO__CONTROLLER, ACTION => NOME_DO_METODO
     // });
 
-    $routes->get('/about', 
-        ['controller' => 'About', 'action' => 'index'], 
-        'about.index');
-
-    $routes->connect('/product/{id}/name/{name}', 
-        ['controller'=>'Product', 'action' =>'show'], 
-        ['_name' => 'product.show', 'pass' => ['id', 'name'], 'id' => '[0-9]+',
-        'name' => '[a-z]+'
-        ])->setMethods(['get']);
-
-    $routes->connect('/home',
-        ['controller'=>'Home', 'action' => 'index'],
-        )->setMethods(['get']);
-
-    $routes->connect('/users',
-        ['controller'=>'User', 'action' => 'index'],
-        )->setMethods(['get']);
+    $routes->get(
+        '/',['controller' => 'User', 'action' => 'index'], 'User.index'
+    );
 };
