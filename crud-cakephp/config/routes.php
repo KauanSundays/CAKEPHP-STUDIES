@@ -4,13 +4,11 @@ use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
 
 return function (RouteBuilder $routes): void {
-    // $routes->scope('/', function (RouteBuilder $builder): void {
-    //     $builder->connect('/teste', ['controller' => 'Home', 'action' => 'index'],
-    //     options: ['_name' => 'home.index']);
-    //     //controller => NOME_DO__CONTROLLER, ACTION => NOME_DO_METODO
-    // });
+    $routes->scope('/', function (RouteBuilder $builder): void {
+        $builder->connect('/', ['controller' => 'Home', 'action' => 'index']);
+        // Adicione outras rotas conforme necessário
 
-    $routes->get(
-        '/',['controller' => 'User', 'action' => 'index'], 'User.index'
-    );
+        $builder->connect('/user/edit/:id', ['controller' => 'User', 'action' => 'edit'], ['id' => '\d+', 'pass' => ['id']]);
+        // ... outras rotas ...
+    });
 };

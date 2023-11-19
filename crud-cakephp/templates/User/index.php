@@ -1,18 +1,25 @@
+<!-- src/Template/User/index.ctp -->
+<h1>Lista de Usuários</h1>
 
-<!-- var_dump($users); -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <ul>
-        <?php
-        foreach($users as $user)
-        ?>
-    </ul>
-</body>
-</html>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Ações</th> <!-- Nova coluna para o botão de editar -->
+    </tr>
+    <?php foreach ($users as $user): ?>
+        <tr>
+            <td><?= h($user->firstName) ?></td>
+            <td><?= h($user->lastName) ?></td>
+            <td><?= h($user->email) ?></td>
+            <td>
+                <?= $this->Html->link(
+                    'Editar',
+                    ['action' => 'edit', $user->id],
+                    ['class' => 'button']
+                ) ?>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
