@@ -11,6 +11,6 @@ return function (RouteBuilder $routes): void {
     // });
 
     $routes->get(
-        '/',['controller' => 'Player', 'action' => 'index'], 'Player.index'
+        '/',['controller' => 'Players', 'action' => 'index'], 'Players.index'
     );
 };
