@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 use Migrations\AbstractMigration;
+use Phinx\Db\Action\AddColumn;
 
 class PlayersTable extends AbstractMigration
 {
@@ -11,11 +12,17 @@ class PlayersTable extends AbstractMigration
         $table = $this->table('players');
         
         $table
-            ->addColumn('nome', 'string', [
+        ->addIndex(['id'], ['unique' => true])
+        ->addColumn('name', 'string', [
                 'limit' => 30,
                 'default' => null,
                 'null' => false,
             ])
+        ->AddColumn('position', 'string', [
+            'limit' => 15,
+            'default' => 'Indefinido',
+            'null' => false,
+        ])
             ->create();
     }
 }
