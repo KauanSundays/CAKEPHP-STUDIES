@@ -1,6 +1,7 @@
 <h1>Players List</h1>
 
-<form action="" method="post">
+<?= $this->Form->create(null, ['url' => '/']) ?>
+    <?= $this->Form->hidden('_csrfToken', ['value' => $this->request->getAttribute('csrfToken')]) ?>
     <label for="name">Name:</label>
     <input type="text" id="name" name="name">
     <label for="position">Position:</label>
