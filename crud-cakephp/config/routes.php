@@ -13,4 +13,8 @@ return function (RouteBuilder $routes): void {
     $routes->get(
         '/',['controller' => 'Players', 'action' => 'index'], 'Players.index'
     );
+
+    $routes->post(
+        '/', ['controller' => 'Players', 'action' => 'store'], 'Players.store'
+    );
 };
