@@ -3,9 +3,9 @@
 <?= $this->Form->create(null, ['url' => '/']) ?>
     <?= $this->Form->hidden('_csrfToken', ['value' => $this->request->getAttribute('csrfToken')]) ?>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name">
+    <input type="text" required id="name" name="name">
     <label for="position">Position:</label>
-    <input type="text" id="position" name="position">
+    <input type="text" required id="position" name="position">
     <input type="submit" value="Submit">
 </form>
 
@@ -14,6 +14,7 @@
         <th>Id</th>
         <th>Name</th>
         <th>Position</th>
+        <th>Actions</th>
     </tr>
 
     <?php foreach ($players as $player):?>
@@ -21,6 +22,12 @@
             <td><?= $player->id ?></td>
             <td><?= $player->name ?></td>
             <td><?= $player->position ?></td>
+            <td>
+            <?= $this->Html->link("Edit", 
+                ["controller"=> "Players",
+                 "action"=> "edit",$player->id
+            ]) ?>
+        </td>
         </tr>
     <?php endforeach; ?>
 </table>
