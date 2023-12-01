@@ -49,7 +49,18 @@ class PlayersController extends AppController
 
     public function edit($id = null)
     {
-        
+        $player = $this->Players->get($id);
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $player = $this->Players->patchEntity($player, $this->request->getData());
+            if ($this->Players->save($player)) {
+                $this->Flash->success(__('The player has been updated.'));
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The player could not be updated. Please, try again.'));
+        }
+
+        $this->set(compact('player'));
     }
 
 }
