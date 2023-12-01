@@ -29,10 +29,10 @@
                 ]) ?>
             </td>
             <td>
-            <?= $this->Html->link("Delete", 
-                    ["controller"=> "Players",
-                    "action"=> "Delete",$player->id
-                ]) ?>
+                <?= $this->Html->link("Delete", 
+                ["controller" => "Players",
+                "action" => "delete", $player->id
+            ]) ?>
             </td>
         </tr>
     <?php endforeach; ?>
