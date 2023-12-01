@@ -23,11 +23,17 @@
             <td><?= $player->name ?></td>
             <td><?= $player->position ?></td>
             <td>
-            <?= $this->Html->link("Edit", 
-                ["controller"=> "Players",
-                 "action"=> "edit",$player->id
-            ]) ?>
-        </td>
+                <?= $this->Html->link("Edit", 
+                    ["controller"=> "Players",
+                    "action"=> "edit",$player->id
+                ]) ?>
+            </td>
+            <td>
+            <?= $this->Html->link("Delete", 
+                    ["controller"=> "Players",
+                    "action"=> "Delete",$player->id
+                ]) ?>
+            </td>
         </tr>
     <?php endforeach; ?>
 </table>
