@@ -47,4 +47,9 @@ class PlayersController extends AppController
         $this->set(compact('player'));
     }
 
+    public function edit($id = null)
+    {
+        
+    }
+
 }
