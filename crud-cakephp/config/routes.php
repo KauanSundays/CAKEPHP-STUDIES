@@ -18,6 +18,10 @@ return function (RouteBuilder $routes): void {
         '/', ['controller' => 'Players', 'action' => 'store'], 'Players.store'
     );
 
+    $routes->post(
+        '/', ['controller' => 'Players', 'action' => 'delete'], 'Players.delete'
+    );
+
     $routes->get('/edit/:id', ['controller' => 'Players', 'action' => 'edit'], 'Players.edit')
         ->setPatterns(['id' => '\d+'])
         ->setPass(['id']);
