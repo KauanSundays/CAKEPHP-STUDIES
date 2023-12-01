@@ -17,4 +17,8 @@ return function (RouteBuilder $routes): void {
     $routes->post(
         '/', ['controller' => 'Players', 'action' => 'store'], 'Players.store'
     );
+
+    $routes->get('/edit/:id', ['controller' => 'Players', 'action' => 'edit'], 'Players.edit')
+        ->setPatterns(['id' => '\d+'])
+        ->setPass(['id']);
 };
