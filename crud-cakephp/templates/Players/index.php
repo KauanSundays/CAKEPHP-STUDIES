@@ -31,10 +31,12 @@
             </td>
             <td>
             <?= $this->Html->link("Delete", 
-                    ["controller"=> "Players",
-                    "action"=> "Delete",
-                    $player->id
-                ]) ?>
+                ["controller" => "Players",
+                "action" => "delete",
+                $player->id
+                ],
+                ['confirm' => 'Are you sure you want to delete?']
+            ) ?>
             </td>
         </tr>
     <?php endforeach; ?>
