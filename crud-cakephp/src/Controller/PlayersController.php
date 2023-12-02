@@ -63,4 +63,19 @@ class PlayersController extends AppController
         $this->set(compact('player'));
     }
 
+    public function delete($id = null)
+    {
+        $this->request->allowMethod(['post', 'delete']);
+        $player = $this->Players->get($id);
+
+        if ($this->Players->delete($player)) {
+            $this->Flash->success(__('The player has been deleted.'));
+        } else {
+            $this->Flash->error(__('The player could not be deleted. Please, try again.'));
+        }
+
+        return $this->redirect(['action' => 'index']);
+    }
+
+
 }
