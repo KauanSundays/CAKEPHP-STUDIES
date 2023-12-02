@@ -5,15 +5,15 @@ use Cake\Routing\Route\DashedRoute;
 use Cake\Routing\RouteBuilder;
 
 return function (RouteBuilder $routes): void {
-    $routes->get(
-        '/',['controller' => 'Players', 'action' => 'index'], 'Players.index'
-    );
+    $routes->get('/', ['controller' => 'Players', 'action' => 'index'], 'Players.index');
 
-    $routes->post(
-        '/add', ['controller' => 'Players', 'action' => 'store'], 'Players.store'
-    );
+    $routes->post('/add', ['controller' => 'Players', 'action' => 'store'], 'Players.store');
 
     $routes->get('/edit/:id', ['controller' => 'Players', 'action' => 'edit'], 'Players.edit')
+        ->setPatterns(['id' => '\d+'])
+        ->setPass(['id']);
+
+    $routes->post('/delete/:id', ['controller' => 'Players', 'action' => 'delete'], 'Players.delete')
         ->setPatterns(['id' => '\d+'])
         ->setPass(['id']);
 };

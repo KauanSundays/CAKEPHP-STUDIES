@@ -32,7 +32,7 @@
             <td>
             <?= $this->Html->link("Delete", 
                 ["controller" => "Players",
-                "action" => "delete",
+                "action" => "Delete",
                 $player->id
                 ],
                 ['confirm' => 'Are you sure you want to delete?']
