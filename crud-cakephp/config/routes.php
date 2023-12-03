@@ -14,6 +14,9 @@ return function (RouteBuilder $routes): void {
         $routes->connect('/delete/:id', ['controller' => 'Players', 'action' => 'delete'], ['_name' => 'Players.delete'])
             ->setPatterns(['id' => '\d+'])
             ->setPass(['id']);
+
+        $routes->connect('/register-positions', ['controller' => 'Positions', 'action' => 'index'],
+        ['__name' => 'Positions.index']);
     });
 };
 ?>
