@@ -11,7 +11,6 @@
 
 <table>
     <tr>
-        <th>Id</th>
         <th>Name</th>
         <th>Position</th>
         <th>Actions</th>
@@ -19,7 +18,6 @@
 
     <?php foreach ($players as $player):?>
         <tr>
-            <td><?= $player->id ?></td>
             <td><?= $player->name ?></td>
             <td><?= $player->position ?></td>
             <td>
