@@ -21,7 +21,7 @@
     <?php foreach ($players as $player):?>
         <tr>
             <td><?= $player->name ?></td>
-            <td><?= $player->position ?></td>
+            <td><?= $player->position->position ?></td>
             <td>
                 <?= $this->Html->link("Edit", ['controller'=> 'Players', 'action'=> 'edit', $player->id]) ?>
             </td>

@@ -12,11 +12,10 @@ class PlayersTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('players');
-        $this->setDisplayField('id');
-        $this->setPrimaryKey('id');
-
-        // Adicione outras configurações da tabela, se necessário.
+        $this->belongsTo('Positions', [
+            'foreignKey' => 'position_id', // substitua pelo nome real da chave estrangeira
+            'joinType' => 'INNER',
+        ]);
     }
 
     public function validationDefault(Validator $validator): Validator

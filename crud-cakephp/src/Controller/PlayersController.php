@@ -24,6 +24,7 @@ class PlayersController extends AppController
     public function store()
     {
         $player = $this->Players->newEmptyEntity();
+    
         if ($this->request->is('post')) {
             $player = $this->Players->patchEntity($player, $this->request->getData());
             if ($this->Players->save($player)) {
@@ -32,6 +33,7 @@ class PlayersController extends AppController
             }
             $this->Flash->error(__('The player could not be saved. Please, try again.'));
         }
+
         $this->set(compact('player'));
     }
 
