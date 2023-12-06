@@ -19,8 +19,6 @@ class PlayersController extends AppController
                 ])->toArray();
         
         $this->set(compact('players', 'positions'));
-
-        dd($positions);
     }
 
     public function store()
