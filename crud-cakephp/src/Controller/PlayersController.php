@@ -10,10 +10,17 @@ class PlayersController extends AppController
     {
         $players = $this->paginate($this->Players);
 
-        $positionsTable = new PositionsTable();
-        $positions = $positionsTable->find('list', ['keyField' => 'id', 'valueField' => 'position'])->toArray();
+        // No método index de PlayersController
+        $positionsTable = $this->getTableLocator()->get('Positions');
 
-    $this->set(compact('players', 'positions'));
+        $positions = $positionsTable->find
+                    ('list', ['keyField' => 'id', 
+                    'valueField' => 'position'
+                ])->toArray();
+        
+        $this->set(compact('players', 'positions'));
+
+        dd($positions);
     }
 
     public function store()
