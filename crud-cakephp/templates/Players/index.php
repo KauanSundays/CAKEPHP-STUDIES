@@ -23,7 +23,9 @@
             <td><?= $player->name ?></td>
             <td><?= $player->position ?></td>
             <td>
-                <?= $this->Html->link("Edit", ['controller'=> 'Players', 'action'=> 'edit', $player->id]) ?>
+                <?= $this->Html->link("Edit", 
+                    ['controller'=> 'Players', 'action'=> 'edit', 
+                    $player->id]) ?>
             </td>
             <td>
                 <?= $this->Form->postLink(

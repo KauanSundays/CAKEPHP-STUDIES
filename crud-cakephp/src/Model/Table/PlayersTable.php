@@ -12,10 +12,12 @@ class PlayersTable extends Table
     {
         parent::initialize($config);
 
+        // Em src/Model/Table/PlayersTable.php
         $this->belongsTo('Positions', [
-            'foreignKey' => 'position_id', // substitua pelo nome real da chave estrangeira
+            'foreignKey' => 'position_id',
             'joinType' => 'INNER',
         ]);
+
     }
 
     public function validationDefault(Validator $validator): Validator

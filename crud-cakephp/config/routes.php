@@ -1,6 +1,7 @@
 <?php
 
 use Cake\Routing\RouteBuilder;
+use Cake\Routing\Route\DashedRoute;
 
 return function (RouteBuilder $routes): void {
     $routes->setRouteClass(DashedRoute::class);
