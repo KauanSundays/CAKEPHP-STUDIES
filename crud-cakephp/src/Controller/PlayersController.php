@@ -41,7 +41,9 @@ class PlayersController extends AppController
     {
         $player = $this->Players->get($id);
 
-        //dd($player);
+        $positionsTable = $this->getTableLocator()->get('Positions');
+        $positions = $positionsTable->find('list', ['keyField' => 'id', 'valueField' => 'position'])->toArray();
+
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $player = $this->Players->patchEntity($player, $this->request->getData());
