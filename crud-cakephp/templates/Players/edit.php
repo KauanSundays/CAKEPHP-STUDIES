@@ -7,9 +7,7 @@
     <?= $this->Form->text('name') ?>
     
     <label for="position">Position:</label>
-    <?= $this->Form->select('position', 
-        $positions ?? [], ['empty' => true, 'id' => 'position']) 
-    ?>
+    <?= $this->Form->select('position', $positions, ['empty' => true, 'id' => 'position']) ?>
 
     <input type="submit" value="Update">
 <?= $this->Form->end() ?>
