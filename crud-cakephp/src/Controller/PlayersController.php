@@ -41,7 +41,7 @@ class PlayersController extends AppController
     {
         $player = $this->Players->get($id);
 
-        dd($player);
+        //dd($player);
 
         if ($this->request->is(['patch', 'post', 'put'])) {
             $player = $this->Players->patchEntity($player, $this->request->getData());
