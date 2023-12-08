@@ -40,10 +40,15 @@ class PlayersController extends AppController
     public function edit($id = null)
     {
         $player = $this->Players->get($id);
+        debug($player->position); // Adicione esta linha
 
         $positionsTable = $this->getTableLocator()->get('Positions');
-        $positions = $positionsTable->find('list', ['keyField' => 'id', 'valueField' => 'position'])->toArray();
-
+        $positions = $positionsTable
+            ->find('list', [
+                'keyField' => 'id',
+                'valueField' => 'position'
+            ])
+            ->toArray();
         if ($this->request->is(['patch', 'post', 'put'])) {
             $player = $this->Players->patchEntity($player, $this->request->getData());
             if ($this->Players->save($player)) {

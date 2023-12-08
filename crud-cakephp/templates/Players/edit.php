@@ -15,5 +15,6 @@
         'default' => $player->position
     ]) ?>
 
+
     <input type="submit" value="Update">
 <?= $this->Form->end() ?>
