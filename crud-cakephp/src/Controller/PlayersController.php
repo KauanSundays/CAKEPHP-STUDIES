@@ -44,7 +44,6 @@ class PlayersController extends AppController
         $positionsTable = $this->getTableLocator()->get('Positions');
         $positions = $positionsTable->find('list', ['keyField' => 'id', 'valueField' => 'position'])->toArray();
 
-
         if ($this->request->is(['patch', 'post', 'put'])) {
             $player = $this->Players->patchEntity($player, $this->request->getData());
             if ($this->Players->save($player)) {
@@ -54,7 +53,7 @@ class PlayersController extends AppController
             $this->Flash->error(__('The player could not be updated. Please, try again.'));
         }
 
-        $this->set(compact('player'));
+        $this->set(compact('player','positions'));
     }
 
     public function delete($id = null)
