@@ -7,9 +7,8 @@ use Cake\ORM\Entity;
 
 class Player extends Entity
 {
-    // Permitir atribuição em massa para os campos 'name' e 'position'
     protected $_accessible = [
         'name' => true,
-        'position' => true,
+        'position_id' => true, 
     ];
 }

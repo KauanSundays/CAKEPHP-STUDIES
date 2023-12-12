@@ -23,20 +23,39 @@ class PlayersController extends AppController
     }
 
     public function store()
-{
-    $player = $this->Players->newEmptyEntity();
-
-    if ($this->request->is('post')) {
-        $player = $this->Players->patchEntity($player, $this->request->getData());
-        if ($this->Players->save($player)) {
-            $this->Flash->success(__('The player has been saved.'));
-            return $this->redirect(['action' => 'index']);
+    {
+        $player = $this->Players->newEmptyEntity();
+    
+        if ($this->request->is('post')) {
+            $requestData = $this->request->getData();
+            
+            // Certifique-se de que 'position' é uma chave existente em $requestData
+            $positionId = $requestData['position'];
+            
+            // Associe a posição ao jogador
+            $requestData['position_id'] = $positionId;
+    
+            $player = $this->Players->patchEntity($player, $requestData);
+            
+            if ($this->Players->save($player)) {
+                $this->Flash->success(__('The player has been saved.'));
+                return $this->redirect(['action' => 'index']);
+            }
+    
+            $this->Flash->error(__('The player could not be saved. Please, try again.'));
         }
-        $this->Flash->error(__('The player could not be saved. Please, try again.'));
+    
+        $positionsTable = $this->getTableLocator()->get('Positions');
+        $positions = $positionsTable
+            ->find('list', [
+                'keyField' => 'id',
+                'valueField' => 'position_name'
+            ])
+            ->toArray();
+    
+        $this->set(compact('player', 'positions'));
     }
-
-    $this->set(compact('player'));
-}
+    
 
 
     public function edit($id = null)
