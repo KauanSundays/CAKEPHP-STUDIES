@@ -5,24 +5,9 @@ namespace App\Model\Entity;
 
 use Cake\ORM\Entity;
 
-/**
- * Player Entity
- *
- * @property int $id
- * @property string $name
- * @property string $position
- */
 class Player extends Entity
 {
-    /**
-     * Fields that can be mass assigned using newEntity() or patchEntity().
-     *
-     * Note that when '*' is set to true, this allows all unspecified fields to
-     * be mass assigned. For security purposes, it is advised to set '*' to false
-     * (or remove it), and explicitly make individual fields accessible as needed.
-     *
-     * @var array<string, bool>
-     */
+    // Permitir atribuição em massa para os campos 'name' e 'position'
     protected $_accessible = [
         'name' => true,
         'position' => true,

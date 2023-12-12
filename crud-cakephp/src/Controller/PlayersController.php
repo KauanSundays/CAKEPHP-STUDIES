@@ -22,44 +22,46 @@ class PlayersController extends AppController
     }
 
     public function store()
-    {
-        $player = $this->Players->newEmptyEntity();
-    
-        if ($this->request->is('post')) {
-            $player = $this->Players->patchEntity($player, $this->request->getData());
-            if ($this->Players->save($player)) {
-                $this->Flash->success(__('The player has been saved.'));
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The player could not be saved. Please, try again.'));
-        }
+{
+    $player = $this->Players->newEmptyEntity();
 
-        $this->set(compact('player'));
+    if ($this->request->is('post')) {
+        $player = $this->Players->patchEntity($player, $this->request->getData());
+        if ($this->Players->save($player)) {
+            $this->Flash->success(__('The player has been saved.'));
+            return $this->redirect(['action' => 'index']);
+        }
+        $this->Flash->error(__('The player could not be saved. Please, try again.'));
     }
+
+    $this->set(compact('player'));
+}
+
 
     public function edit($id = null)
-    {
-        $player = $this->Players->get($id);
-        debug($player->position); // Adicione esta linha
+{
+    $player = $this->Players->get($id);
 
-        $positionsTable = $this->getTableLocator()->get('Positions');
-        $positions = $positionsTable
-            ->find('list', [
-                'keyField' => 'id',
-                'valueField' => 'position'
-            ])
-            ->toArray();
-        if ($this->request->is(['patch', 'post', 'put'])) {
-            $player = $this->Players->patchEntity($player, $this->request->getData());
-            if ($this->Players->save($player)) {
-                $this->Flash->success(__('The player has been updated.'));
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The player could not be updated. Please, try again.'));
+    $positionsTable = $this->getTableLocator()->get('Positions');
+    $positions = $positionsTable
+        ->find('list', [
+            'keyField' => 'position', // Alterado para 'position' como chave
+            'valueField' => 'position'
+        ])
+        ->toArray();
+
+    if ($this->request->is(['patch', 'post', 'put'])) {
+        $player = $this->Players->patchEntity($player, $this->request->getData());
+        if ($this->Players->save($player)) {
+            $this->Flash->success(__('The player has been updated.'));
+            return $this->redirect(['action' => 'index']);
         }
-
-        $this->set(compact('player','positions'));
+        $this->Flash->error(__('The player could not be updated. Please, try again.'));
     }
+
+    $this->set(compact('player', 'positions'));
+}
+
 
     public function delete($id = null)
     {

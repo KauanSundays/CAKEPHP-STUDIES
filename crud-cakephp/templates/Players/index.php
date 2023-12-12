@@ -5,8 +5,8 @@
     <label for="name">Name:</label>
     <input type="text" required id="name" name="name">
     <label for="position">Position:</label>
-    <?= $this->Form->select('position', $positions, 
-        ['empty' => true, 'id' => 'position']) 
+    <?= 
+        $this->Form->select('position', $positions, ['empty' => true, 'id' => 'position']) 
     ?>
     <input type="submit" value="Submit">
 <?= $this->Form->end() ?>
