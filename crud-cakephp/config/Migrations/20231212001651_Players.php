@@ -5,14 +5,12 @@ use Migrations\AbstractMigration;
 
 class Players extends AbstractMigration
 {
-    /**
-     * Change Method.
-     *
-     * More information on this method is available here:
-     * https://book.cakephp.org/phinx/0/en/migrations.html#the-change-method
-     * @return void
-     */
     public function change(): void
     {
+        $table = $this->table('players');
+        $table->addColumn('name', 'string', ['limit' => 255, 'null' => false])
+              ->addColumn('position_id', 'integer', ['null' => false])
+              ->addForeignKey('position_id', 'positions', 'id', ['delete' => 'CASCADE', 'update' => 'CASCADE'])
+              ->create();
     }
 }
