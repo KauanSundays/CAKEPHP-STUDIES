@@ -6,18 +6,19 @@ use App\Controller\AppController;
 
 class PlayersController extends AppController
 {
+   // No método index de PlayersController
     public function index()
     {
-        $players = $this->paginate($this->Players);
+        $players = $this->paginate($this->Players->find('all', ['contain' => 'Positions']));
 
-        // No método index de PlayersController
         $positionsTable = $this->getTableLocator()->get('Positions');
+        $positions = $positionsTable
+            ->find('list', [
+                'keyField' => 'id',
+                'valueField' => 'position_name'
+            ])
+            ->toArray();
 
-        $positions = $positionsTable->find
-                    ('list', ['keyField' => 'id', 
-                    'valueField' => 'position'
-                ])->toArray();
-        
         $this->set(compact('players', 'positions'));
     }
 
