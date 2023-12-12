@@ -1,9 +1,7 @@
-<?php
+<?// Em config/Seeds/PositionsSeed.php
 declare(strict_types=1);
 
 use Migrations\AbstractSeed;
-
-// Positions seed.
 
 class PositionsSeed extends AbstractSeed
 {
@@ -12,22 +10,22 @@ class PositionsSeed extends AbstractSeed
     {
         $data = [
             [
-                'position' => 'Goleiro',
+                'position_name' => 'Goleiro',
             ],
             [
-                'position' => 'Zagueiro',
+                'position_name' => 'Zagueiro',
             ],
             [
-                'position' => 'Lateral',
+                'position_name' => 'Lateral',
             ],
             [
-                'position' => 'Volante',
+                'position_name' => 'Volante',
             ],
             [
-                'position' => 'Meia',
+                'position_name' => 'Meia',
             ],
             [
-                'position' => 'Atacante',
+                'position_name' => 'Atacante',
             ],
         ];
 
