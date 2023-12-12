@@ -20,11 +20,11 @@
     <?php foreach ($players as $player):?>
         <tr>
             <td><?= $player->name ?></td>
-            <td><?= $player->position ?></td>
+            <td><?= $player->position->position_name ?></td>
             <td>
-                <?= $this->Html->link("Edit", 
-                    ['controller'=> 'Players', 'action'=> 'edit', 
-                    $player->id]) ?>
+            <button type="button" onclick="editAction(<?= $player->id ?>, '<?= $player->name ?>', <?= $player->position->id ?>)">
+                Edit
+            </button>
             </td>
             <td>
                 <?= $this->Form->postLink(
@@ -36,3 +36,12 @@
         </tr>
     <?php endforeach; ?>
 </table>
+
+<script>
+    function editAction(id, player_name, player_position_id) {
+        document.getElementById('id').value = id;
+        document.getElementById('name').value = player_name;
+        document.getElementById('position').value = player_position_id;
+        console.log(id, player_name, player_position_id)
+    }
+</script>
