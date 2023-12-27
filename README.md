@@ -4,40 +4,34 @@ Este repositório é uma coleção de exercícios e projetos concebidos para fam
 ### Exercícios
 <h2>Rotas e Controladores
   <ol>
-    <li>Crie uma rota que retorne uma mensagem simples.</li>
-    <li>Defina uma rota que aceite um parâmetro de URL e o exiba.</li>
-    <li>Crie o controlador chamado UsersController.</li>
-    <li>Defina rotas para listar e exibir usuários utilizando o controlador.</li>
-    <li>Adicione uma rota que redireciona para outra rota.</li>
-    <li>Utilize a diretiva foreach do CakePHP para exibir uma lista de itens em uma view.</li>
+    <li>Crie uma rota que retorne uma mensagem simples. ✔️</li>
+    <li>Defina uma rota que aceite um parâmetro de URL e o exiba. ✔️</li>
+    <li>Crie o controlador chamado UsersController. ✔️ </li>
+    <li>Defina rotas para listar e exibir usuários utilizando o controlador. ✔️ </li>
+    <li>Adicione uma rota que redireciona para outra rota. ✔️ </li>
+    <li>Utilize a diretiva foreach do CakePHP para exibir uma lista de itens em uma view. ✔️ </li>
   </ol>
 <h2>Modelos e Banco de Dados
   <ol>
-     <li>Crie um modelo chamado Product utilizando o bake.</li>
-     <li>Migre uma tabela de banco de dados para armazenar produtos.</li>
-     <li>Crie um seeder para popular a tabela de produtos com dados de exemplo.</li>
-     <li>Escreva uma consulta ORM para recuperar todos os produtos.</li>
-     <li>Adicione validação de dados ao criar um novo produto.</li>
-     <li>Exiba a lista de produtos em uma view.</li>
+     <li>Crie um modelo chamado Product utilizando o bake. ✔️ </li>
+     <li>Migre uma tabela de banco de dados para armazenar produtos. ✔️ </li>
+     <li>Crie um seeder para popular a tabela de produtos com dados de exemplo. ✔️</li>
+     <li>Escreva uma consulta ORM para recuperar todos os produtos. ✔️ </li>
+     <li>Adicione validação de dados ao criar um novo produto. ✔️ </li>
+     <li>Exiba a lista de produtos em uma view. ✔️ </li>
   </ol>
 <h2>Autenticação
   <ol>
-    <li>Configure a autenticação de usuário usando bake.</li>
-    <li>Crie um sistema de registro de usuário.</li>
-    <li>Implemente o login de usuário.</li>
-    <li>Proteja uma rota para que apenas usuários autenticados possam acessá-la.</li>
-  </ol>
-<h2>Middleware
-  <ol>
-    <li>Crie um middleware personalizado que adiciona um cabeçalho HTTP a todas as respostas.</li>
-    <li>Aplique um middleware globalmente para todas as rotas.</li>
-    <li>Use um middleware para verificar se um usuário tem permissão para acessar uma rota.</li>
+    <li>Configure a autenticação de usuário usando bake. ✔️ </li>
+    <li>Crie um sistema de registro de usuário. ✔️ </li>
+    <li>Implemente o login de usuário. ✔️ </li>
+    <li>Proteja uma rota para que apenas usuários autenticados possam acessá-la. ✔️ </li>
   </ol>
 <h2>Formulários e Validação
   <ol>
-    <li>Crie um formulário para criar um novo produto.</li>
-    <li>Valide os dados do formulário no controlador.</li>
-    <li>Exiba mensagens de erro na view quando a validação falhar.</li>
+    <li>Crie um formulário para criar um novo produto. ✔️ </li>
+    <li>Valide os dados do formulário no controlador. ✔️ </li>
+    <li>Exiba mensagens de erro na view quando a validação falhar. ✔️ </li>
   </ol>
 <h2>Views e Templates
   <ol>
