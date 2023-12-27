@@ -3,17 +3,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-/**
- * Teste Controller
- *
- */
 class TesteController extends AppController
 {
-    /**
-     * Index method
-     *
-     * @return \Cake\Http\Response|null|void Renders view
-     */
     public function index()
     {
         $query = $this->Teste->find();
@@ -21,6 +12,13 @@ class TesteController extends AppController
 
         $this->set(compact('teste'));
     }
+
+    public function hello()
+    {
+        $this->autoRender = false;
+        echo 'Hello, World!';
+    }
+
 
     /**
      * View method
