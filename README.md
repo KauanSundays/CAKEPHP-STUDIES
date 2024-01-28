@@ -17,21 +17,21 @@ Este repositório é uma coleção de exercícios e projetos concebidos para fam
      <li>Migre uma tabela de banco de dados para armazenar produtos. ✔️ </li>
      <li>Crie um seeder para popular a tabela de produtos com dados de exemplo. ✔️</li>
      <li>Escreva uma consulta ORM para recuperar todos os produtos. ✔️ </li>
-     <li>Adicione validação de dados ao criar um novo produto. ✔️ </li>
-     <li>Exiba a lista de produtos em uma view. ✔️ </li>
+     <li>Adicione validação de dados ao criar um novo produto.  </li>
+     <li>Exiba a lista de produtos em uma view.  </li>
   </ol>
 <h2>Autenticação
   <ol>
-    <li>Configure a autenticação de usuário usando bake. ✔️ </li>
-    <li>Crie um sistema de registro de usuário. ✔️ </li>
-    <li>Implemente o login de usuário. ✔️ </li>
-    <li>Proteja uma rota para que apenas usuários autenticados possam acessá-la. ✔️ </li>
+    <li>Configure a autenticação de usuário usando bake.  </li>
+    <li>Crie um sistema de registro de usuário.  </li>
+    <li>Implemente o login de usuário.  </li>
+    <li>Proteja uma rota para que apenas usuários autenticados possam acessá-la.  </li>
   </ol>
 <h2>Formulários e Validação
   <ol>
-    <li>Crie um formulário para criar um novo produto. ✔️ </li>
-    <li>Valide os dados do formulário no controlador. ✔️ </li>
-    <li>Exiba mensagens de erro na view quando a validação falhar. ✔️ </li>
+    <li>Crie um formulário para criar um novo produto.  </li>
+    <li>Valide os dados do formulário no controlador.  </li>
+    <li>Exiba mensagens de erro na view quando a validação falhar.  </li>
   </ol>
 <h2>Views e Templates
   <ol>
