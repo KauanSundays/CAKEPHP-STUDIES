@@ -7,7 +7,7 @@ class CreateProductsTable extends AbstractMigration
 {
     public function change(): void
     {
-        $table = $this->table('products_table');
+        $table = $this->table('products');
         $table->addColumn('name', 'string', [
             'default' => null,
             'limit' => 255,
