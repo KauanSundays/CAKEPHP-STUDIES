@@ -17,7 +17,7 @@ class ProductsController extends AppController
     public function index()
     {
         $query = $this->Products->find();
-        dd('oi');
+        //dd('oi');
 
         $products = $this->paginate($query);
 
