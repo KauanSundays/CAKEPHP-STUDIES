@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+use Cake\Validation\Validator;
 
 /**
  * Products Controller
@@ -45,15 +46,30 @@ class ProductsController extends AppController
     public function add()
     {
         $product = $this->Products->newEmptyEntity();
+        
         if ($this->request->is('post')) {
-            $product = $this->Products->patchEntity($product, $this->request->getData());        
-            if ($this->Products->save($product)) {
-                $this->Flash->success(__('The product has been saved.'));
+            $validator = new Validator();
+            $validator
+                ->requirePresence('name')
+                ->notEmptyString('name', 'Please enter the name of the product.')
+                ->minLength('name', 3, 'Name must be at least 3 characters long.');
 
-                return $this->redirect(['action' => 'index']);
-            }      
-            $this->Flash->error(__('The product could not be saved. Please, try again.'));
-        }      
+            $errors = $validator->validate($this->request->getData());
+
+            if (empty($errors)) {
+                $product = $this->Products->patchEntity($product, $this->request->getData());
+
+                if ($this->Products->save($product)) {
+                    $this->Flash->success(__('The product has been saved.'));
+                    return $this->redirect(['action' => 'index']);
+                } else {
+                    $this->Flash->error(__('The product could not be saved. Please, try again.'));
+                }
+            } else {
+                $this->Flash->error(__('Validation error. Please fix the errors and try again.'));
+            }
+        }
+
         $this->set(compact('product'));
     }
 
