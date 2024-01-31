@@ -1,15 +1,14 @@
 <div>
-    <form action="post">
-        <div>
-            <input type="text" name="name" placeholder="Type the name of product">
-        </div>
-        <div>
-            <input type="numeric" name="price" placeholder="Select de price of product">
-        </div>
-        <div>
-            <button>
-                Submit
-            </button>
-        </div>
-    </form>
+<?= $this->Form->create(null, ['url' => ['controller' => 'Products', 'action' => 'add']]) ?>
+    <div>
+        <?= $this->Form->control('name', ['type' => 'text', 'placeholder' => 'Type the name of the product']) ?>
+    </div>
+    <div>
+        <?= $this->Form->control('price', ['type' => 'number', 'placeholder' => 'Select the price of the product']) ?>
+    </div>
+    <div>
+        <?= $this->Form->submit('Submit') ?>
+    </div>
+<?= $this->Form->end() ?>
+
 </div>
