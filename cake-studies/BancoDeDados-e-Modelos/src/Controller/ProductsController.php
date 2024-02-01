@@ -34,9 +34,10 @@ class ProductsController extends AppController
      */
     public function view($id = null)
     {
-        $product = $this->Products->get($id, contain: []);
+        $product = $this->Products->get($id, ['contain' => []]);
         $this->set(compact('product'));
     }
+    
 
     /**
      * Add method
@@ -52,7 +53,7 @@ class ProductsController extends AppController
             $validator
                 ->requirePresence('name')
                 ->notEmptyString('name', 'Please enter the name of the product.')
-                ->minLength('name', 3, 'Name must be at least 3 characters long.');
+                ->minLength('name', 4, 'Name must be at least 4 characters long.'); // Alterado para 4 caracteres
 
             $errors = $validator->validate($this->request->getData());
 
@@ -66,6 +67,11 @@ class ProductsController extends AppController
                     $this->Flash->error(__('The product could not be saved. Please, try again.'));
                 }
             } else {
+                // Adiciona mensagem de erro manualmente se o campo 'name' não atender à validação personalizada
+                if (isset($errors['name']['minLength'])) {
+                    $this->Products->setError('name', 'Campo muito pequeno');
+                }
+
                 $this->Flash->error(__('Validation error. Please fix the errors and try again.'));
             }
         }
