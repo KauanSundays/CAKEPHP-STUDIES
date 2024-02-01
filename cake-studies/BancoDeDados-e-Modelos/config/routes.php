@@ -10,7 +10,8 @@ return function (RouteBuilder $routes): void {
     $routes->scope('/', function (RouteBuilder $builder): void {
         $builder->connect('/', ['controller' => 'Products', 'action' => 'index']);
         $builder->connect('/add-product', ['controller' => 'Products', 'action' => 'add']);
-    
+        $builder->connect('/index', ['controller' => 'Products', 'action' => 'index']);
+        
         $builder->fallbacks();
     });
 };
