@@ -1,7 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Controller;
+
 use Cake\Validation\Validator;
 
 /**
@@ -37,7 +39,7 @@ class ProductsController extends AppController
         $product = $this->Products->get($id, ['contain' => []]);
         $this->set(compact('product'));
     }
-    
+
 
     /**
      * Add method
@@ -47,13 +49,13 @@ class ProductsController extends AppController
     public function add()
     {
         $product = $this->Products->newEmptyEntity();
-        
+
         if ($this->request->is('post')) {
             $validator = new Validator();
             $validator
                 ->requirePresence('name')
                 ->notEmptyString('name', 'Please enter the name of the product.')
-                ->minLength('name', 4, 'Name must be at least 4 characters long.'); // Alterado para 4 caracteres
+                ->minLength('name', 4, 'Name must be at least 4 characters long.');
 
             $errors = $validator->validate($this->request->getData());
 
@@ -62,22 +64,19 @@ class ProductsController extends AppController
 
                 if ($this->Products->save($product)) {
                     $this->Flash->success(__('The product has been saved.'));
-                    return $this->redirect(['action' => 'index']);
+                    return $this->redirect($this->referer());
                 } else {
                     $this->Flash->error(__('The product could not be saved. Please, try again.'));
                 }
             } else {
-                // Adiciona mensagem de erro manualmente se o campo 'name' não atender à validação personalizada
-                if (isset($errors['name']['minLength'])) {
-                    $this->Products->setError('name', 'Campo muito pequeno');
-                }
-
+                $product->setErrors(['name' => ['Campo muito pequeno']]);
                 $this->Flash->error(__('Validation error. Please fix the errors and try again.'));
             }
         }
 
         $this->set(compact('product'));
     }
+
 
     /**
      * Edit method
