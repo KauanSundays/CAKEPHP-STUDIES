@@ -16,3 +16,5 @@
         <?php endforeach; ?>
     </tbody>
 </table>
+
+<?= $this->Html->link('Go to Add Products', ['controller' => 'Products', 'action' => 'add']) ?>
