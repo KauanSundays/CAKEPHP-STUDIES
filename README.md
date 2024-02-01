@@ -18,7 +18,7 @@ Este repositório é uma coleção de exercícios e projetos concebidos para fam
      <li>Crie um seeder para popular a tabela de produtos com dados de exemplo. ✔️</li>
      <li>Escreva uma consulta ORM para recuperar todos os produtos. ✔️ </li>
      <li>Adicione validação de dados ao criar um novo produto. ✔️ </li>
-     <li>Exiba a lista de produtos em uma view. </li>
+     <li>Exiba a lista de produtos em uma view. ✔️ </li>
   </ol>
 <h2>Autenticação
   <ol>
