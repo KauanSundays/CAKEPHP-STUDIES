@@ -1,3 +1,7 @@
+<?php
+
+use Symfony\Contracts\Service\Attribute\Required;
+?>
 <div>
 <?= $this->Form->create(null, ['url' => ['controller' => 'Products', 'action' => 'add']]) ?>
     <div>
