@@ -2,7 +2,11 @@
 
 <?= $this->Form->create($product) ?>
     <div>
-        <?= $this->Form->control('name', ['label' => 'Name', 'placeholder' => 'Type the name of the product']) ?>
+    <?= $this->Form->control('name', [
+        'label' => 'Name',
+        'placeholder' => 'Type the name of the product',
+        'required' => true,
+    ]) ?>
     </div>
     <div>
         <?= $this->Form->control('price', ['label' => 'Price', 'placeholder' => 'Select the price of the product']) ?>
