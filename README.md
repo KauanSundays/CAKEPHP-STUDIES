@@ -29,7 +29,7 @@ Este repositório é uma coleção de exercícios e projetos concebidos para fam
   </ol>
 <h2>Formulários e Validação
   <ol>
-    <li>Crie um formulário para criar um novo produto.  </li>
+    <li>Crie um formulário para criar um novo produto. ✔️ </li>
     <li>Valide os dados do formulário no controlador.  </li>
     <li>Exiba mensagens de erro na view quando a validação falhar.  </li>
   </ol>
