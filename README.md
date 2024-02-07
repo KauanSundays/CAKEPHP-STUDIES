@@ -1,7 +1,9 @@
 # CakePHP Basics Repository
+
 Este repositório é uma coleção de exercícios e projetos concebidos para familiarizar os desenvolvedores com os fundamentos do framework CakePHP. Constitui uma base sólida para quem busca aprofundar seus conhecimentos em desenvolvimento web com CakePHP.
 
 ### Exercícios
+
 <h2>Rotas e Controladores
   <ol>
     <li>Crie uma rota que retorne uma mensagem simples. ✔️</li>
@@ -98,7 +100,7 @@ Além dos exercícios, este repositório inclui projetos práticos para aplicar 
 
 <H1> Blog Avançado </H1>
 
-  Desenvolva um sistema de blog mais avançado com recursos como categorias, tags e uma interface de administração.
+Desenvolva um sistema de blog mais avançado com recursos como categorias, tags e uma interface de administração.
 
 <H1> Plataforma de E-learning </H1>
   Construa uma plataforma de e-learning com cursos, aulas e perfis de usuários.
@@ -113,4 +115,5 @@ Além dos exercícios, este repositório inclui projetos práticos para aplicar 
 Clone este repositório e siga as instruções em cada exercício ou projeto. Certifique-se de ter o ambiente de desenvolvimento CakePHP configurado.
 
 ## Contribuição
+
 Se desejar contribuir com mais exercícios, projetos ou melhorias, sinta-se à vontade para enviar uma solicitação pull. Este repositório foi criado para ajudá-lo a aprender e aprimorar suas habilidades no CakePHP!
