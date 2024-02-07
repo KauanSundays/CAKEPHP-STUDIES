@@ -46,11 +46,10 @@ class ProductsController extends AppController
         if ($this->request->is('post')) {
             $product = $this->Products->patchEntity($product, $this->request->getData());
             if ($this->Products->save($product)) {
-                $this->Flash->success(__('The product has been saved.'));
-
+                $this->Flash->success(__('O produto foi salvo com sucesso.'));
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The product could not be saved. Please, try again.'));
+            $this->Flash->error(__('Não foi possível adicionar o produto. Por favor, tente novamente.'));
         }
         $this->set(compact('product'));
     }
